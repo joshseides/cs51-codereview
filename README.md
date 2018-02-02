@@ -1,1 +1,1 @@
-# cs51-codereview
+# cs51-section

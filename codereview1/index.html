@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Code Review 1</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/blood.css">
+    <link rel="stylesheet" href="css/codereview.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/highlight.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section><h2>Code Review 1</h2></section>
+        <section>
+          <h3>Topic Outline</h3>
+          <ul>
+            <li>Introduction</li>
+            <li>Concrete vs. abstract syntax</li>
+            <li>Type inference</li>
+            <li>First-order functional programming</li>
+            <li>Aside on Git and command line</li>
+            <li>Higher-order functional programming (Part 1)</li>
+          </ul>
+        </section>
+        <section>
+          <section><h2>Introduction</h2></section>
+          <section>
+            <h3>About Me</h3>
+            <div class="column1">
+              <img style="width: 200px" src="./img/jagr.jpeg">
+            </div>
+            <div class="column2">
+              <ul>
+                <li>Sophomore</li>
+                <li>Atlanta, GA</li>
+                <li>Mather &lt;3</li>
+                <li>Computer Science, Economics</li>
+                <li>HSA and HCCG</li>
+                <li>New York...Rangers, Giants, Yankees &lt;3&lt;3</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <img src="http://s2.quickmeme.com/img/64/643065a128e452ea92bc1172ea2d2cde6c021763d4c9001c4349e73914516e86.jpg">
+          </section>
+          <section>
+            <h3>Logistics</h3>
+            <ul style="margin-bottom: 20px">
+              <li>Every Friday 12-1pm @ Science Center 222</li>
+              <li>Important concepts, practice, and lab</li>
+              <li>Pset buddies?! No.</li>
+              <li>Individual meetings</li>
+              <li>Questions, questions, questions</li>
+            </ul>
+            <a href="mailto:jseides@college.harvard.edu">jseides@college.harvard.edu</a>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

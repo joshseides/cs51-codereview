@@ -1,0 +1,12 @@
+.column1 {
+  display: inline-block;
+  float: left;
+  height: 100%;
+  width: 35%;
+}
+
+.column2 {
+  display: inline-block;
+  height: 100%;
+  width: 65%;
+}
