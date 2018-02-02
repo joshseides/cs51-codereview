@@ -25,7 +25,10 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section><h2>Code Review 1</h2></section>
+        <section>
+          <h2>Code Review 1</h2>
+          <h4>Josh Seides</h4>
+        </section>
         <section>
           <h3>Topic Outline</h3>
           <ul>
@@ -34,6 +37,7 @@
             <li>Type inference</li>
             <li>First-order functional programming</li>
             <li>Aside on Git and command line</li>
+            <li>Testing</li>
           </ul>
         </section>
         <section>
@@ -67,6 +71,165 @@
               <li>Questions, questions, questions</li>
             </ul>
             <a href="mailto:jseides@college.harvard.edu">jseides@college.harvard.edu</a>
+          </section>
+        </section>
+        <section>
+          <section><h2>Why OCaml?</h2></section>
+          <section>
+            <h3>Why OCaml?</h3>
+            <ul>
+              <li>No side effects</li>
+              <li>Better reasoning</li>
+              <li>Concurrency</li>
+              <li>Other paradigms</li>
+            </ul>
+          </section>
+          <section><h2>Concrete vs. Abstract Syntax</h2></section>
+          <section>
+            <h3>Definition</h3>
+            <ul>
+              <li><b>Concrete syntax</b>: content and order of actual characters written</li>
+              <li><b>Abstract syntax</b>: structure of syntax
+                <ul>
+                  <li>Order of operations</li>
+                  <li>Tree diagrams</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <pre><code data-trim data-noescape class="ocaml">
+              - 3 - 5
+              - (3 - 5)
+              (- 3) - 5
+            </code></pre>
+          </section>
+          <section><h2>Who cares?</h2></section>
+          <section>
+            <h3>No one. Jk...</h3>
+            <ul>
+              <li>Compilers</li>
+              <li>Abstraction</li>
+              <li>Code maintenance</li>
+            </ul>
+          </section>
+          <section><h2>Questions 1-3</h2></section>
+        </section>
+        <section>
+          <section><h2>Type Inference</h2></section>
+          <section><h2>Who cares?</h2></section>
+          <section>
+            <h3>Who cares?</h3>
+            <ul>
+              <li>Error-catching</li>
+              <li>Writing functions</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Definition</h3>
+            <ul>
+              <li>Statically-typed</li>
+              <li>Atomic types</li>
+              <li>User-defined types</li>
+              <li>Compound types
+                <ul>
+                  <li>Different types</li>
+                  <li>Type vs. value constructors</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <pre><code data-trim data-noescape class="ocaml">
+              1 (* int *)
+              2.5 (* float *)
+              true (* bool *)
+              "mather" (* string *)
+              () (* unit *)
+            </code></pre>
+          </section>
+          <section><h2>Writing type expressions</h2></section>
+          <section>
+            <h3>General Form</h3>
+            <ul>
+              <li>Non-functions</li>
+              <li>Functions</li>
+              <li>Inline typing vs. type expressions</li>
+            </ul>
+          </section>
+          <section><h2>Questions 4-8</h2></section>
+        </section>
+        <section>
+          <section><h2>First-order Functional Programming</h2></section>
+          <section>
+            <h3>Definition</h3>
+            <ul>
+              <li><b>First-order</b>: inputs and outputs are atomic, user-defined, or compound</li>
+              <li><b>Higher-order</b>: inputs and/or outputs are functions</li>
+              <li>Functions as <b>first-class citizens</b></li>
+            </ul>
+          </section>
+          <section>
+            <img src="https://lumiere-a.akamaihd.net/v1/images/first-order_8ae2955f.jpeg">
+          </section>
+          <section>
+            <h3>General Approach for List Problems</h3>
+            <ol>
+              <li>Define type expression</li>
+              <li>(Usually) add rec keyword</li>
+              <li>Match the list</li>
+              <li>Base case: isolate</li>
+              <li>Recursive case: assume and solve</li>
+            </ol>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <pre><code data-trim data-noescape class="ocaml">
+              square_all [1; 2; 3] ;; (* [1; 4; 9] *)
+            </code></pre>
+          </section>
+          <section><h2>Questions 9-10</h2></section>
+        </section>
+        <section>
+          <section><h2>Command Line and Git</h2></section>
+          <section>
+            <h3>Commands</h3>
+            <ul>
+              <li>cd</li>
+              <li>ls</li>
+              <li>mkdir</li>
+              <li>tab completion</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Git</h3>
+            <ul>
+              <li>See worksheet</li>
+              <li>git add .</li>
+              <li>git commit -am "message"</li>
+              <li>git push</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section><h2>Testing</h2></section>
+          <section>
+            <h3>Why?</h3>
+            <ul>
+              <li>The autograder is not your friend</li>
+              <li>About that pset...</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <pre><code data-trim data-noescape class="ocaml">
+              assert (max_list [1; 1; 1] = 1) ;;
+              assert (max_list [1; 4; 2] = 4) ;;
+              assert (max_list [4; 2; 1] = 4) ;;
+              assert (max_list [1; 2; 4] = 4) ;;
+            </code></pre>
           </section>
         </section>
       </div>
