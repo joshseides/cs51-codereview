@@ -53,7 +53,8 @@ Again.
 ```ocaml
 let valid_date (d : date) : date =
     if d.year <= 0 then raise (Invalid_Date "only positive years")
-    else if d.month = 1 || d.month = 3 || d.month = 5 || d.month = 7 || d.month = 8 || d.month = 10 || d.month = 12 then
+    else if d.month = 1 || d.month = 3 || d.month = 5 || d.month = 7 ||
+            d.month = 8 || d.month = 10 || d.month = 12 then
         (if d.day > 31 then raise (Invalid_Date "too many days") 
         else if d.day < 1 then raise (Invalid_Date "days must be > 1") 
         else d) 
@@ -160,7 +161,7 @@ raise ;;
 fun _ -> raise Exit ;;
 ```
 
-#### Importing and Exporting Files
+### Importing and Exporting Files
 Important things to look into
 * `open ...`
 * `let open ... in`
