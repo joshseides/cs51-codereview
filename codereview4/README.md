@@ -8,6 +8,7 @@ This week we are looking at a very important, useful construct in OCaml that hel
 * signatures and interfaces
 * polymorphic abstract types
 * functors
+* priority queues
 
 ### Modules
 Using **modules** is an important way to take advantage of abstraction in OCaml. Modules are basically a grouping of types, functions, and other values together under one value name. They provide a way to organize and scale repeated blocks of code.
@@ -170,3 +171,23 @@ module type QUEUE =
 
 #### Problem 15
 *How can we use partial application on the function/functor we just created?*
+
+### Priority Queues (Ezra)
+
+A priority queue is a data structure similar to a queue except that each element has a priority associated with it. When you remove an element from a priority queue, you remove the element with the highest priority. Typically, lower numbers are associated with higher priorities. It may be helpful to think of a priority queue like an airplane boarding queue
+
+* There are multiple dierent groups with associated priorities.
+* Lower numbers are associated with higher priority (boarding group 1 gets on before people like us in group 4 can board).
+* Within each priority level, there may be a line.
+* By the end of pset4, you will hate them both.
+
+### Binary Heaps
+We want something that behaves something like a binary tree but stays balanced (that is, avoids degenerating into a list). There are many dierent ways to implement a tree like this, but one of the simpler ways is called a binary heap. A binary heap is a type of tree (that is to say each node has two children) that obeys dierent invariants from a binary search tree. In particular, a binary heap obeys the following properties
+
+* **Ordering**: The value stored at the root of any subtree must be smaller than all the values stored in the subtrees below the root.
+* **Balance**: For any node, its left child tree is either the same size as (or exactly one node larger than) its right child tree.
+
+The ordering invariant makes it easy to implement a priority queue using a binary heap (can you see why?). The balance invariant makes sure that a binary heap will not devolve into a list-like structure regardless of the patterns of insertions and deletes.
+
+#### Problem 16
+*Perform the following operations for a binary heap and draw out the resulting tree: add 10, add 6, add 6, add 5, add 11, add 1, take.*
