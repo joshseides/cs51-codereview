@@ -10,6 +10,8 @@ We finally venture out of the functional paradise we have been so fortunate to h
 ### References
 A **reference** is a built-in mutable structure in OCaml that allows for updating and accessing the contents of the reference. Unlike functional programming, references are part of the **imperative** paradigm that involves impure functions with side effects.
 
+In OCaml, references are defined with the `ref` value constructor. To access the values of a reference, the `!` ("bang") operator is used. To update the contents of a reference, the `:=` operator is used.
+
 #### Problem 1
 *What is the difference between pure and impure functions?*
 
@@ -52,6 +54,8 @@ Recall from lecture the definition of mutable lists.
 | Nil
 | Cons of 'a * ('a mlist ref) ;;)
 ```
+
+This is similar to the recursive notion of linked lists we saw before. However, this is a **mutable** linked list. This is a closer approximation to a linked list used in practice, as references allow for more efficient operations.
 
 #### Problem 10
 *Implement `m_convert` that converts a list into an `mlist`.*
