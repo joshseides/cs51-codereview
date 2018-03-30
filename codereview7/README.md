@@ -70,7 +70,7 @@ let c = ref a ;;
 ```
 
 #### Problem 10
-*Which of the following are true?*
+*Which of the following are `true`?*
 
 ```ocaml
 a = b ;;
