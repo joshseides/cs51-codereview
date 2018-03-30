@@ -26,23 +26,61 @@ Now onto one of the coolest and most mind-boggling things you will learn in CS 5
 *Implement `smap` from lab.*
 
 #### Problem 4
-*What is wrong with the following code?*
+*Which of these (if any) work?*
 
 ```ocaml
-let rec ones () : int str =
+let rec ones =
     Cons(1, ones) ;;
+
+let rec ones () =
+    Cons(1, ones) ;;
+
+let rec ones =
+    (fun () -> Cons(1, ones)) ;;
 ```
 
 #### Problem 5
 *Define `nats` from lab.*
 
+#### Problem 6
+*Implement a function `s_merge` that merges two streams.*
+
+#### Problem 7
+*Implement a function `s_split` that given one stream, splits the stream into two streams (returning a tuple of two streams), with successive values in the original stream going to the alternating streams.*
+
+#### Aside
+These are various ways to implement `sfilter`.
+
+```ocaml
+let rec sfilter (pred : 'a -> bool) (s : 'a stream) : 'a stream = 
+    fun () ->
+        let Cons(h, t) = s() in
+        if pred h then Cons(h, sfilter pred t)
+        else (sfilter pred t) () ;;
+(**))
+
+let rec sfilter (pred : 'a -> bool) (s : 'a stream) : 'a stream = 
+    if pred (head s)
+    then fun () -> Cons(head s, sfilter pred (tail s))
+    else (sfilter pred (tail s)) ;;
+(**))
+
+let rec sfilter (pred : 'a -> bool) (s : 'a stream) : 'a stream = 
+    if pred (head s)
+    then fun () -> Cons(head s, sfilter pred (tail s))
+    else (fun () -> (sfilter pred (tail s)) ()) ;;
+(**))
+```
+
+Why can we not do just `sfilter pred (tail s)` in the `else` clause?
+
 ### Sieve
 From lab: "Eratosthenes sieve is a method for generating the prime numbers. Given a list of natural numbers starting with 2, we filter out those in the tail of the list not divisible by the first element of the list and apply the sieve to that tail."
 
-#### Problem 6
+#### Problem 9
 *How does the sieve work conceptually?*
 
-#### Problem 7
+#### Problem 10
 *How can we implement this?*
 
 ### `Lazy` Module
@@ -51,10 +89,10 @@ It is pretty annoying to have to write out `fun () -> ...` every time we want to
 * `fun () -> BLAH` goes to `lazy BLAH`
 * `BLAH_FUN ()` goes to `Lazy.force BLAH_FUN`
 
-#### Problem 8
+#### Problem 11
 *How should our type definitions change to use the `Lazy` module?*
 
-#### Problem 9
+#### Problem 12
 *Implement `head` and `smap` using the `Lazy` module.*
 
 ### Physical and Structural Equality
@@ -69,7 +107,7 @@ let b = ref 1 ;;
 let c = ref a ;;
 ```
 
-#### Problem 10
+#### Problem 13
 *Which of the following are `true`?*
 
 ```ocaml
