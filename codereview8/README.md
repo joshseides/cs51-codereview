@@ -5,14 +5,23 @@
 This week we look at another interesting paradigm: object-oriented programming.
 
 * introduction
+* interfaces
 * methods and classes
 * inheritance and overriding
-* interfaces
 * dynamic dispatching
 
 ### Why Object-Oriented Programming?
 
 The main reason why OOP is so powerful is it eliminates a lot of extraneous coding that programmers have to do to handle many different objects at once. OOP allows you to define methods that work with generic objects instead of worrying about the details of any particular object. In addition, you don’t have to re-type a lot of code that you might have to otherwise, to define new objects.
+
+### Interfaces
+
+**Interfaces** are similar to module signatures; they specify what methods concrete classes should have available for use (although they provide no information about implementation details). Classes can signal that they conform to a particular interface, and functions can make use of this fact to use the methods that they now know are available for use.
+
+Also similarly to module signatures, interfaces allow you to expose only as much information as you would like about a class. This allows you to define internal functions in a class that the “outside world” cannot use.
+
+#### Problem 1
+*Define a class type `person`. What parameters, values, and methods should `person` have?*
 
 ### Methods and Classes
 
@@ -30,10 +39,10 @@ Classes generally provide additional methods called constructors that take a few
 
 You might find thinking of classes this way helpful: functors return new modules in much the same way that constructors return new class instances. Functions contained in a module are similar to methods contained in a class (although class methods usually do not require the object as a parameter, like module functions do). A class definition is similar to module signatures in that the class definition is not an object itself; it merely provides a template for concrete objects to conform to.
 
-#### Problem 1
-*Define a class `student`. What values and methods should `student`?*
-
 #### Problem 2
+*Define a class `student` of type `person`. What values and methods should `student`?*
+
+#### Problem 3
 *Implement a function `getAverage` that takes as input a `student list` and returns a `float` denoting the average GPA of all the students in the input list. Assume `student` has a method `getGPA` that returns a student's GPA.*
 
 ### Inheritance and Overriding
@@ -44,28 +53,19 @@ With other programming paradigms, you might have trouble defining the concept of
 
 Specifically, we say that a STEM concentrator class is a subclass of a generic student class. This makes defining lots of objects in a hierarchy a lot easier!
 
-#### Problem 3
-*Define a class `STEMbro` that inherits from `student` and adds the appropriate values and methods (if any) for STEM bros.*
+#### Problem 4
+*Define a class `stemBro` that inherits from `student` and adds the appropriate values and methods (if any) for STEM bros.*
 
 To allow for the possibility of defining more specific behavior for subclasses, OOP allows subclasses to override methods (and occasionally properties) of their superclasses.
 
-#### Problem 4
-*Update the `STEMbro` class to override the `getGPA` method to subtract `0.5` from the value returned by the `getGPA` implementation of `student`.*
-
 #### Problem 5
-*Create a `STEMbro list` of your three favorite STEM bros.*
+*Update the `stemBro` class to override the `getInfo` method to subtract `0.5` from the value returned by the `getGPA` implementation of `student`.*
 
 #### Problem 6
-*Pass your `STEMbro list` to `getAverage`. What happens here? How can this be fixed?*
-
-### Interfaces
-
-**Interfaces** are similar to module signatures; they specify what methods concrete classes should have available for use (although they provide no information about implementation details). Classes can signal that they conform to a particular interface, and functions can make use of this fact to use the methods that they now know are available for use.
-
-Also similarly to module signatures, interfaces allow you to expose only as much information as you would like about a class. This allows you to define internal functions in a class that the “outside world” cannot use.
+*Create a `stemBro list` of your three favorite STEM bros.*
 
 #### Problem 7
-*Define a class type `person` and make the previously defined `student` class to be of type `person`. What parameters, values, and methods should `person` have?*
+*Pass your `stemBro list` to `getAverage`. What happens here? How can this be fixed?*
 
 ### Dynamic Dispatching
 
@@ -75,7 +75,7 @@ In OOP, methods are looked up at runtime for their specific implementation; this
 
 * `:>`
 * `?`
-* `!method`
+* `method!`
 * default parameters
 * types involving `array`
 
