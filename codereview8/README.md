@@ -76,6 +76,8 @@ In OOP, methods are looked up at runtime for their specific implementation; this
 * `:>`
 * `?`
 * `!method`
+* default parameters
+* types involving `array`
 
 ### Ezra's Disadvantages to Using OOP
 
