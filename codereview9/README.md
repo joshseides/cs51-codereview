@@ -18,7 +18,7 @@
 * 2^n = (1.5)^n
 * n = O((log n)^50)
 
-#### Problem 2
+#### Problem 2 (Daniel)
 *Solve the following recurrences. For each recurrence, what is an example of a function with that recurrence?*
 * T(n) = T(n - 1) + c
 * T(n) = T(n / 2) + c
@@ -99,7 +99,7 @@ let rec smap2 (f : 'a -> 'b -> 'c)
 (**)))
 ```
 
-*The `n`th Lucas number `L(n)` is defined as follows:*
+*(Credit to Daniel for these Lucas questions!) The `n`th Lucas number `L(n)` is defined as follows:*
 * `2`, if `n = 0`
 * `1`, if `n = 1`
 * `L(n - 1) + L(n - 2)`, otherwise
@@ -111,7 +111,7 @@ let rec smap2 (f : 'a -> 'b -> 'c)
 *Implement an expression `lucas :  int stream` to represent an infinite stream of Lucas numbers.*
 
 #### Problem 9
-*There is a relationship between the Fibonacci and Lucas numbers. If `F(n)` represents the `n`th Fibonacci number, then `F(n) = (L(n - 1) + L(n + 1)) / 5. Implement an expression `fib :  int stream` to represent an infinite stream of Fibnoacci numbers in terms of the expression `lucas` already created. (NOTE: Assume this stream starts at `F(1) = 1`.)*
+*There is a relationship between the Fibonacci and Lucas numbers. If `F(n)` represents the `n`th Fibonacci number, then `F(n) = (L(n - 1) + L(n + 1)) / 5`. Implement an expression `fib :  int stream` to represent an infinite stream of Fibnoacci numbers in terms of the expression `lucas` already created. (NOTE: Assume this stream starts at `F(1) = 1`.)*
 
 #### Problem 10
 *Create a class `scoreboard` of type `scoreboard_type`.*
@@ -126,4 +126,4 @@ class type scoreboard_type =
 ```
 
 #### Problem 11
-*Create a class `ultra_scoreboard` that takes in a list of `scoreboard` objects and can reset, update, or give the summary of any of them.
+*Create a class `ultra_scoreboard` that takes in a list of `scoreboard` objects and can reset, update, or give the summary of any of them.*
